@@ -1,0 +1,11 @@
+{% for j in row %}
+<div class="hovereffect hvex">
+
+                <a class="tourlist" href="/polls/pdct/{{j.id}}"><img src="{{ j.amzimg }}" width=100%></a><br>
+  <div class="imginfo overlay" hidden>
+                       <a class="pdinfo tourtabs" href="#" target="_blank">{{j.brand}}</a>
+</div>
+                </div>
+{% endfor %}
+
+

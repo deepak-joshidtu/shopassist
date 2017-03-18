@@ -1,0 +1,16 @@
+{% for i in row %}
+                <div class="col-md-2 " style="padding-left:0px; padding-right:0px">
+{% for j in i %}
+<div class="hovereffect">
+
+                <a class="tourlist" href="/polls/pdct/{{j.id}}"><img src="{{ j.amzimg }}" width=100%></a><br>
+  <div class="imginfo overlay" hidden>
+                       <a class="info tourtabs" href="#" target="_blank">{{j.brand}}</a>
+</div>
+                </div>
+{% endfor %}
+
+
+                </div>
+{% endfor %}
+

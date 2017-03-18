@@ -1,0 +1,1 @@
+/root/dj/fst/fst/wsgi.py

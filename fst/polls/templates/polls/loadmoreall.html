@@ -1,0 +1,18 @@
+{% for j in row %}
+
+<div class="hovereffect hvex">
+
+                <a class="tourlist" href="/polls/pdct/{{j.id}}"><img src="{{ j.amzimg }}" width=70%></a><br>
+<div class="imhid lablet" hidden>
+<a class="lablet" width=80%>{{j.title}}</a><br>
+<input type="checkbox" name="vehicle" value="{{j.id}}" onchange="addcols('{{j.id}}')">Add to wishlist<br>
+                       <p >Price: Rs {{j.price}}</p>
+</div>
+
+
+
+
+                </div>
+{% endfor %}
+
+

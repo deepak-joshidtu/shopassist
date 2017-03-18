@@ -1,0 +1,11 @@
+{% for j in row %}
+<div class="hovereffect">
+
+                <a class="tourlist" onclick="matchpd('{{j.id}')"><img src="{{ j.amzimg }}" width=100%></a><br>
+  <div class="imginfo overlay" hidden>
+                       <a class="info tourtabs" onclick="setsource('{{j.id}}')">setsource{{j.brand}}</a>
+</div>
+                </div>
+{% endfor %}
+
+

@@ -1,0 +1,21 @@
+<div class="row">
+{% for j in row %}
+<div class="hovereffect hvex col-md-2">
+
+                <a class="tourlist" href="/polls/pdct/{{j.id}}"><img src="{{ j.amzimg }}" width=100%></a><br>
+  <div class="imginfo overlay pdinfo" hidden>
+                       <a>{{j.title}}</a>
+
+</div>
+<div class="imhid lablet" hidden>
+<form action="/polls/addcomplist" method="post">
+<input type="checkbox" name="vehicle" value="{{j.id}}" onchange="addcols('{{j.id}}')">Add to compare list<br>
+</form>
+                       <p >Price: Rs {{j.price}}</p>
+</div>
+
+                </div>
+{% endfor %}
+</div>
+
+

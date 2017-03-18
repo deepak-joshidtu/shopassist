@@ -1,0 +1,306 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="{{category}}&amp; shop bags: eshoppingassitant.com:{{category}}&amp; Luggage" />
+    <meta name="title" content="category shop bags: eshoppingassistant.com: {{category}} &amp; Luggage" />
+    <meta name="keywords" content="{{category}},shop bags,buy {{category}}} online india,eshoppingassistant.com" />
+    <title>{{category}} :eshoppingassistant: Bags, Wallets &amp; Luggage</title>
+   
+    
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'polls/favicon.ico' %}?" type="image/x-icon">
+
+   
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'polls/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'polls/styleloc.css' %}" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'polls/dashboard.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+
+
+  </head>
+
+  <body >
+
+   
+
+
+    <div class="container-fluid bigcontainer">
+
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+
+
+
+     <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-barfa "></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <img  class="brandicon" src="{% static 'polls/icon.png' %}" height=47px>
+              <a class="navbar-brand" href="http://www.eshoppingassistant.com/">eShoppingAssistant</a>
+            </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+             
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Backpacks<span class="caret"></span></a>
+                  <ul class="dropdown-menu ">
+                    <li><a href="/polls/Laptop bags">Laptop Bags</a></li>
+                    <li><a href="/polls/rucksacks">Rucksacks</a></li>
+                    <li><a href="/polls/school bags">School Bags</a></li>
+                    <li><a href="/polls/casual backpacks">Casual Backpacks</a></li>
+                    
+                  </ul>
+                </li>
+                 
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Luggage<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/cabin luggage">Cabin_luggage</a></li>
+                    <li><a href="/polls/check in luggage">Check-in Luggage</a></li>
+                    <li><a href="/polls/travel duffles">Travel Duffles</a></li>
+                    <li><a href="/polls/travel accessories">Travel Accessories</a></li>
+                   
+                  </ul>
+                </li>
+
+              
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Handbags<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/handbags">Handbags</a></li>
+                    <li><a href="/polls/slingbags">Sling Bags</a></li>
+                    <li><a href="/polls/tote bags">Tote Bags</a></li>
+                    <li><a href="/polls/wallet for women">Wallets for women</a></li>
+                  
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Briefcases<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/briefcases">Briefcases</a></li>
+                    <li><a href="/polls/messenger bags">Messenge Bags</a></li>
+                    <li><a href="/polls/wallet for men">Wallets for men</a></li>
+                    
+                  </ul>
+                </li>
+             
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+          <a id="matchres"></a>
+          <a onclick="loadmoreeasy()">loadmore</a>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+<div class="row showby">
+<div class="col-md-2 col-md-offset-2 tourtabs1">
+ <a class="welcomeaddress " href="/polls/{{category}}">ShowAll</a>
+</div>
+<div class="col-md-2 tourtabs">
+ <a class="welcomeaddress " href="/polls/tbrand/{{category}}">ShowByBrands</a>
+</div>
+<div class="col-md-2 tourtabs">
+ <a class="welcomeaddress " href="/polls/tcolor/{{category}}">ShowByColor</a>
+</div>
+<div class="col-md-2 tourtabs">
+ <a class="welcomeaddress " href="#" >ShowByPrice</a>
+</div>
+
+</div>
+
+
+<div class="bigcontain" id="results">
+		
+		<div class="row">
+                 
+		<p class="authorquote" ></p>
+                </div>
+                <div class="row">
+
+
+{% for i in row %}
+		<div class="col-md-2 " id="result{{forloop.counter0}}" style="padding-left:0px; padding-right:0px">
+{% for j in i %}
+<div class="hovereffect hvex">
+
+                <a class="tourlist" onclick="matchpd('{{j.id}}')"><img src="{{ j.amzimg }}" width=100%></a><br>
+  <div class="imginfo overlay" hidden>
+                       <a class="info tourtabs" onclick="setsource('{{j.id}}')">setsource{{j.brand}}{{j.id}}</a>
+                      <a class="info tourtabs" onclick="blockthis('{{j.id}}')">blockthis{{j.brand}}{{j.id}}</a>
+</div>
+                </div>
+{% endfor %}
+
+                
+		</div>
+{% endfor %}
+	</div>
+    
+
+
+    </div> <!--container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'polls/bootstrap.min.js' %}"></script>
+   	<script>
+var spid="";
+function setsource(pid)
+{
+spid=pid;
+$("#matchres").html("dafadjfkal");
+}
+function matchpd(pid)
+{
+$.get("/polls/matchsimilar/".concat(pid).concat("/").concat(spid),function(data){$("#matchres").html(data)});
+}
+function blockthis(pid)
+{
+$.get("/polls/blockthis/".concat(pid),function(data){$("#matchres").html(data)});
+}
+var track_page = 1; //track user scroll as page number, right now page number is 1
+var loading  = false; //prevents multiple loads
+
+
+function loadmoreeasy() { //detect page scroll
+        track_page++; //page number increment
+        load_contents(track_page); //load content  
+    
+};    
+//Ajax load function
+function load_contents(track_page){
+    {
+        loading = true;  //set loading flag on
+{var countc=0;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result0').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+           //alert with HTTP error
+        })
+}
+{var countc=1;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result1').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+        })
+}
+{var countc=2;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result2').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+        })
+}
+{var countc=3;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result3').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+        })
+}
+{var countc=4;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result4').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+        })
+}
+{var countc=5;
+        $.get( "/polls/mlall/{{category}}/".concat( track_page.toString()).concat("/").concat(countc.toString()), function(data,countc){
+            loading = false; //set loading flag off once the content is loaded
+            if(data.trim().length == 0){
+                //notify user if nothing to load
+                return;
+            }
+           var t="#result".concat(countc.toString);
+            $('#result5').append(data); //append data into #results element
+       
+        }).fail(function(xhr, ajaxOptions, thrownError) { //any errors?
+        })
+}
+
+    }
+}
+
+
+	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92778533-1', 'auto');
+  ga('send', 'pageview');
+
+</script>    
+  </body>
+</html>
+

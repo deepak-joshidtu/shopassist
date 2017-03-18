@@ -1,0 +1,38 @@
+.welcomeaddress{color:black;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;font-size: 14px;font-style: normal;font-variant: normal;font-weight: 400;line-height: 20px;text-transform: uppercase;}
+.bigcontain{width:100%;height:100%;display:table;position:relative;font-family:'Oswald', Arial;color:#fff;font-size:32px;font-weight:300;text-align:center;}
+body {height: 100%;}	
+.overlay{position:absolute;top:0px;left:0px;background:gray;display:inline;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;font-size: 20px;font-style: normal;font-variant: normal;font-weight: 40;line-height: 20px;text-transform: none;color:white;}
+.imga{width:80%;}
+@media (max-width: 767px) {.navbar-brand { display: none; }}
+.hovereffect{position:relative;}
+.hovereffect img {transition: all 0.4s ease-in;}
+.hovereffect:hover img {-webkit-transform: scale(1);-ms-transform: scale(1);transform: scale(0.9);}
+.brandicon{float:left;padding-right:5px}
+.lablet{font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;font-size:14px;font-style: normal;font-variant: normal;font-weight: 400;text-align:left;color:black;}
+.lablet1{font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;text-align:left;font-size: 14px;color:blue;}
+.lablethd{font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;font-size:18px;font-style: normal;font-variant: normal;font-weight: 400;line-height: 20px;text-align:left;color:orange;}
+.pdname{font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;padding-top:20px;padding-bottom:40px;font-size: 24px;font-style: normal;font-variant: normal;font-weight: 400;line-height: 20px;text-transform: uppercase;color:orange;}
+.modimgs{postion:relative;}
+.imgsm{padding-top:40px;padding-bottom:40px;}
+.authorquote{color:black;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;font-size: 24px;font-style: normal;font-variant: normal;font-weight: 400;line-height: 20px;text-align:left;padding-left:20px;text-transform: uppercase;}
+.hovereffect .imhid {display:none;}
+.hovereffect:hover .imhid{display:inline-block;}
+.showby{background:lightgrey;}
+.hvex{border:1px solid black;}
+.tourtabs1{background:grey;overflow:hidden;border:1px solid black;}
+.tourtabs{overflow:hidden;border:1px solid black;}
+.tourtabs2{border:1px solid black;}
+.impad{padding-left:0px; padding-right:0px;}
+#footer_outer{margin-top:2em;padding-top:2em;padding-bottom:2em;border-top:1px solid #e1e1e1}
+#footer_inner{width:960px;margin:0 auto;text-align:left}
+.loader {border: 16px solid #f3f3f3;border-radius: 50%;border-top: 16px solid #3498db;width: 60px;height: 60px;margin left:40px;-webkit-animation: spin 2s linear infinite;animation: spin 2s linear infinite;}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.pdinfo{font-size:10px;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;}
+

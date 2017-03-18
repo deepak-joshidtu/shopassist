@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+
+# Sitemap files
+Sitemap: http://www.eshoppingassistant.com/sitemap.xml
+

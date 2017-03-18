@@ -1,0 +1,534 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<style>
+.sidebar-brand
+{
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+text-transform: uppercase;
+}
+.welcomeaddress
+{
+color:black;
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+text-transform: uppercase;
+}
+.sidebar-opt
+{
+
+
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+text-transform: uppercase;
+color:black;
+
+}
+
+.bigcontain{
+width:100%;
+	height:100%;
+	display:table;
+	position:relative;
+	
+        font-family:'Oswald', Arial;
+color:#fff;
+font-size:32px;
+	font-weight:300;
+	text-align:center;
+}
+
+.authorquote
+{
+color:black;
+}
+#footer_outer{margin-top:2em;padding-top:2em;padding-bottom:2em;border-top:1px solid #e1e1e1}
+#footer_inner{width:960px;margin:0 auto;text-align:left}
+
+
+.bigimg{
+width:100%;
+padding:0;
+}
+.fillit {
+    width: 100%;
+    
+   
+    object-fit: fill;
+}
+
+
+	html,
+		body {
+			height: 100%;
+		}
+		.jumbotron {
+			margin-top: 30px;
+		}
+		#content,
+		.sidebar {
+			min-height: 650px;
+		}
+		#row-main {
+			overflow-x: hidden; /* necessary to hide collapsed sidebars */
+		}
+		#content {
+			<!--background-color: lightyellow; -->
+			
+			-webkit-transition: width 0.3s ease;
+			-moz-transition: width 0.3s ease;
+			-o-transition: width 0.3s ease;
+			transition: width 0.3s ease;
+		}
+		#content .btn-group {
+			margin-bottom: 10px;
+		}
+		.col-md-6 .width-9,
+		.col-md-6 .width-12,
+		.col-md-9 .width-6,
+		.col-md-9 .width-12,
+		.col-md-12 .width-6,
+		.col-md-12 .width-9 {
+			display: none; /* just hiding labels for demo purposes */
+		}
+		.sidebar {
+			background-color: lightgrey;
+			
+			-webkit-transition: margin 0.3s ease;
+			-moz-transition: margin 0.3s ease;
+			-o-transition: margin 0.3s ease;
+			transition: margin 0.3s ease;
+		}
+		.collapsed {
+			display: none; /* hide it for small displays */
+		}
+		@media (min-width: 992px) {
+			.collapsed {
+				display: block;
+			}
+			#sidebar-left.collapsed {
+				margin-left: -25%; /* same width as sidebar */
+			}
+			#sidebar-right.collapsed {
+				margin-right: -25%; /* same width as sidebar */
+			}
+		}
+
+.overlay
+{
+position:absolute;
+top:0px;
+display:inline-block;
+background:lightgrey;
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        font-size: 10px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+text-transform: uppercase;
+color:white;
+
+}
+.imga{
+width:80%;
+}
+.hovereffect
+{
+position:relative;
+}
+.hovereffect:hover{
+background-color:lightgrey;
+}
+
+.hovereffect img {
+  
+ 
+  transition: all 0.4s ease-in;
+}
+
+.hovereffect:hover img {
+ 
+ 
+  
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(0.9);
+}
+
+
+
+
+
+.fclr {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+.navbar-brand1{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px;color:#777;}
+.navbar-brand1:focus,.navbar-brand1:hover{text-decoration:none;color:#5e5e5e;background-color:transparent;}
+.brandicon{float:left;padding-right:5px}
+.blue {
+  background: #13b4ff;
+}
+
+.red {
+  background: #8b0000;
+}
+
+.black {
+  background: #000000;
+}
+.hidfilt{padding-left:25px;}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+.toggle-sidebar-left
+{
+height: 5px;
+float: left;
+}
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+
+
+</style>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'polls/favicon.ico' %}?" type="image/x-icon">
+
+    <title>eProductBrowser</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'polls/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'polls/dashboard.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+
+ <script>
+
+      
+    </script>
+
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("detaildiv").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajx.php?length="+$("[name='length']").val()+"&width="+$("[name='width']").val()+"&color="+$("[name='color']").val()+"&price="+$("[name='price']").val(), true);
+  xhttp.send();
+}
+function loaddetails() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+document.getElementById("detaildiv").innerHTML =this.responseText;
+ init();
+        animate();
+      
+    }
+  };
+  xhttp.open("GET", "prdctdetails.php", true);
+  xhttp.send();
+}
+</script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body >
+
+   
+
+
+    <div class="container-fluid">
+
+
+
+
+
+
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-barfa "></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <img  class="brandicon" src="{% static 'polls/icon.png' %}" height=47px>
+              <a class="navbar-brand" href="http://eproductbrowser.com/">eProductBrowser</a>
+            </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+             
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Backpacks<span class="caret"></span></a>
+                  <ul class="dropdown-menu ">
+                    <li><a href="/polls/Laptop bags">Laptop Bags</a></li>
+                    <li><a href="/polls/rucksacks">Rucksacks</a></li>
+                    <li><a href="/polls/school bags">School Bags</a></li>
+                    <li><a href="/polls/casual backpacks">Casual Backpacks</a></li>
+                    
+                  </ul>
+                </li>
+                 
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Luggage<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/cabin luggage">Cabin_luggage</a></li>
+                    <li><a href="/polls/check in luggage">Check-in Luggage</a></li>
+                    <li><a href="/polls/travel duffles">Travel Duffles</a></li>
+                    <li><a href="/polls/travel accessories">Travel Accessories</a></li>
+                   
+                  </ul>
+                </li>
+
+              
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Handbags<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/handbags">Handbags</a></li>
+                    <li><a href="/polls/slingbags">Sling Bags</a></li>
+                    <li><a href="/polls/tote bags">Tote Bags</a></li>
+                    <li><a href="/polls/wallet for women">Wallets for women</a></li>
+                  
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Briefcases<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/polls/briefcases">Briefcases</a></li>
+                    <li><a href="/polls/messenger bags">Messenge Bags</a></li>
+                    <li><a href="/polls/wallet for men">Wallets for men</a></li>
+                    
+                  </ul>
+                </li>
+             
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+                 <script>
+                    function myFunction() {$("#demdim").toggle();}
+                         
+                    function colFunction() {$("#demcol").toggle();}
+                    function brndFunction() {$("#dembrnd").toggle();}
+                    function prcFunction() {$("#demprice").toggle();} 
+
+                 </script>
+
+
+       <div class="bigcontain">
+		
+		<div class="row">
+                 
+		<p class="authorquote">Nameste.</p>
+                <p class="welcomeaddress">This is an intelligent shopping platform. Please select one of the categories below to proceed.</p>
+                </div>
+                <div class="row">
+{% for i in category %}
+		<div class="col-md-2">
+             <div class="hovereffect">
+                <a class="tourlist" href="/polls/{{i.cate1}}"><img class="imga" src="{{i.cateimg1}}"></a><br>
+                  <div class="imginfo overlay" >
+                       <a class="info" href="/polls/{{i.cate1}}" >{{i.cate1}}</a>
+                  
+                   </div>
+           </div>
+
+          <div class="hovereffect">
+                <a  class="tourlist" href="/polls/{{i.cate2}}"><img class="imga" src="{{i.cateimg2}}"></a><br>
+                <div class="imginfo overlay" >
+                       <a class="info" href="/polls/{{i.cate2}}" >{{i.cate2}}</a>
+
+                   </div>
+</div>
+</div>
+{% endfor %}
+ 
+		</div>
+	</div>
+
+    
+
+
+    </div> <!--container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'polls/bootstrap.min.js' %}"></script>
+   	<script>
+
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+function modfunction(arg1){
+    modal.style.display = "block";
+    modalImg.src = arg1;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
+
+
+         $(".hovereffect2").hover(function(){
+    
+     $(this).find("div").toggle();
+    }, function(){
+    
+    $(this).find("div").toggle();
+});
+		
+$(".sidebar").hover(function(){
+    $(this).removeClass("col-md-2 col-md-1").addClass("col-md-2");
+    $("#content").removeClass("col-md-11 col-md-offset-1 col-md-10 col-md-offset-2").addClass("col-md-10 col-md-offset-2");
+
+    }, function(){
+  $(this).removeClass("col-md-2 col-md-1 ").addClass("col-md-1");
+    $("#content").removeClass("col-md-11 col-md-offset-1 col-md-10 col-md-offset-2").addClass("col-md-11 col-md-offset-1");
+
+});
+
+
+	</script>
+    
+  </body>
+</html>
+
