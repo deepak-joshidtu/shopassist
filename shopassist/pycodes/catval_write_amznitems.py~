@@ -1,0 +1,72 @@
+from polls.models import amznitems, snapitems,flipitems
+f=open('snapalltypes','r')
+dic={'catval1':'Laptop','catval2': 'Laptop','catval4':'cabin','catval5':'cabin','catval6':'duffles','catval7':'duffles', 'catval8':'messenger','catval9':'messenger','catval10':'briefcase','catval11':'briefcase','catval12':'rucksack', 'catval13':'school','catval14':'handbags','catval15':'sling','catval16':'tote','cateval17':'women'}
+count=0
+for i in f:
+    count=count+1
+    b=i.split(": ")
+    print count
+    a=snapitems.objects.filter(amzimg__icontains=b[0]).all()
+    c=b[1].split(",")
+    for k in a:
+       fnd=0
+       for j in range(0,4):
+          if c[2*j].strip():
+          # if dic[c[2*j]] in k.brandcategory:
+                  k.catval=int(c[2*j].replace("catval",""))
+                  k.scatval=b[1]
+                  k.save()
+          break
+       
+               
+       
+
+from polls.models import amznitems,infiitems,ptmitems,snapitems,flitems
+f=open('ptmalltypes','r')
+dic={'catval1':'Laptop','catval2': 'Laptop','catval4':'cabin','catval5':'cabin','catval6':'duffles','catval7':'duffles', 'catval8':'messenger','catval9':'messenger','catval10':'briefcase','catval11':'briefcase','catval12':'rucksack', 'catval13':'school','catval14':'handbags','catval15':'sling','catval16':'tote','cateval17':'women'}
+count=0
+for i in f:
+    count=count+1
+    b=i.split(": ")
+    print count
+    a=ptmitems.objects.filter(amzimg__icontains=b[0].replace(".","/")[:-5]).all()
+    c=b[1].split(",")
+    for k in a:
+       fnd=0
+       for j in range(0,4):
+           if c[2*j].strip():
+           #if dic[c[2*j]] in k.brandcategory:
+                  k.catval=int(c[2*j].replace("catval",""))
+                  k.scatval=b[1]
+                  k.save()
+           break
+
+
+
+from polls.models import amznitems
+f=open('alltypes','r')
+dic={'catval1':'Laptop','catval2': 'Laptop','catval4':'cabin','catval5':'cabin','catval6':'duffles','catval7':'duffles', 'catval8':'messenger','catval9':'messenger','catval10':'briefcase','catval11':'briefcase','catval12':'rucksack', 'catval13':'school','catval14':'handbags','catval15':'sling','catval16':'tote','cateval17':'women'}
+count=0
+lst=[]
+for i in f:
+    lst.append(i)
+    count=count+1
+    b=i.split(": ")
+    lst.append
+
+
+a=amznitems.objects.filter().all()
+for i in a:
+    if i.amzimg in lst:
+    c=b[1].split(",")
+    for k in a:
+       fnd=0
+       for j in range(0,4):
+           if dic[c[2*j]] in k.brandcategory:
+                  k.catval=int(c[2*j].replace("catval",""))
+                  k.save()
+                  break
+       
+    
+
+db.adminCommand({setParameter: 1, internalQueryExecMaxBlockingSortBytes:50151432}){ "was" : 33554432, "ok" : 1 }

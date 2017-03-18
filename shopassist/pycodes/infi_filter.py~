@@ -1,0 +1,29 @@
+laptop-bags  
+brnd=[u'Lenovo', u'HP', u'Asus', u'Acer', u'FGear', u'Styleys', u'Dell', u'TheClownfish', u'AmericanTourister', u'AmazonBasics', u'Gods', u'TheBluePink', u'Quechua', u'COSMUS', u'Magna', u'Targus', u'WildHorn', u'KadakDeal', u'TS', u'POLESTAR', u'Easies', u'Gear', u'Suntop', u'AllExtreme', u'Wildcraft', u'GLEAM', u'DaTasche', u'Impressilo', u'SALUTE', u'DIGRAZIA', u'Lampart', u'KuberIndustries', u'Portronics', u'Generix', u'TheHouseoftara', u'Switchon', u'TommyHilfiger', u'BagAge', u'ALBORZ']
+
+import sys
+from datetime import datetime
+
+
+import MySQLdb
+import re
+conn = MySQLdb.connect("103.50.160.63","hotbuy5g_joshi","joshi123","hotbuy5g_prdctlist" )
+cur = conn.cursor()
+cur.execute("select id, title,listing_url from products1")
+dictl={'laptop-bags':'Laptop bags','briefcases':'briefcases','trolly-bags':'cabin bags','duffle':'travel duffles','handbags':'handbags','wallet':'wallet for men','sling':'sling bags','Bags':'handbags','school':'school bags'}
+lstu=[]
+results=cur.fetchall()
+#cur.execute("ALTER TABLE products1   ADD COLUMN brand VARCHAR(80) not null after imgs, Add column category varchar(300) not null after brand")
+for i in results:
+    k=re.match(u'https://www.infibeam.com/(.*)/search.*',i[2])
+    if k:
+      if k.group(1) not in lstu:
+         lstu.append(k.group(1))
+      if "laptop-bags" in i[2]:
+        #print i[2]
+        #print i[1]
+        for j in brnd:
+            if (j+" " in i[1]):
+                print i[1]
+                print[j]
+                print i[2]
